@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.0" />
+    <PackageReference Include="MSTest.TestAdapter" Version="3.2.0" />
+    <!--Needed, even though this package comes in via a recursive reference to R5T.NG0017,
+    because Visual Studio Test Explorer will find tests, but *not* actually run them if it's missing.-->
+    <PackageReference Include="MSTest.TestFramework" Version="3.2.0" />
+    <PackageReference Include="coverlet.collector" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\D8S.E0009.F000\D8S.E0009.F000.csproj" />
+    <ProjectReference Include="..\D8S.E0009.V000\D8S.E0009.V000.csproj" />
+  </ItemGroup>
+
+</Project>
